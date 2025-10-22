@@ -1,5 +1,5 @@
-import CouponCard from './page'
+import SenduCouponPage from './page'
 
 export default function Home() {
-  return <CouponCard />
+  return <SenduCouponPage />
 }
