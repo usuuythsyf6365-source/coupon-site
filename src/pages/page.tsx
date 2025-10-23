@@ -50,7 +50,7 @@ export default function SenduCouponPage() {
             <main className="max-w-4xl mx-auto px-6 py-12 space-y-12">
                 {/* Proxy Service */}
                 <section>
-                    <h2 className="text-2xl font-semibold mb-6 text-violet-300">Proxy Service1:</h2>
+                    <h2 className="text-2xl font-semibold mb-6 text-violet-300">Proxy Service:</h2>
                     <div className="space-y-6">
                         {partners.slice(0, 2).map((p) => (
                             <div
