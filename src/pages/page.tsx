@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 
 // SENDU Coupon Display Page (TailwindCSS + React)
 // Shows static coupon codes with access buttons — non-editable fields
 
 export default function SenduCouponPage() {
+    const [copiedId, setCopiedId] = useState<string | null>(null);
+
+    const handleCopy = (couponCode: string, id: string) => {
+        navigator.clipboard.writeText(couponCode);
+        setCopiedId(id);
+        setTimeout(() => setCopiedId(null), 1000);
+    };
+
     const partners = [
         {
             id: "bird",
@@ -31,11 +39,9 @@ export default function SenduCouponPage() {
     return (
         <div className="min-h-screen bg-gradient-to-br from-[#090917] via-[#0d0c24] to-[#1a133b] text-white font-sans">
             {/* Header */}
-            <header className="border-b border-white/10 py-5 px-8 flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center text-xs font-bold">
-                    S
-                </div>
-                <h1 className="text-xl font-semibold tracking-wide bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
+            <header className="border-b border-white/10 py-6 px-8 flex items-center gap-4">
+                <img src="/vr.svg" alt="SENDU Logo" className="w-8 h-8 object-contain" />
+                <h1 className="text-3xl font-bold tracking-wide bg-gradient-to-r from-violet-400 via-fuchsia-400 to-pink-400 bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(168,85,247,0.5)]">
                     SENDU Coupon
                 </h1>
             </header>
@@ -53,7 +59,7 @@ export default function SenduCouponPage() {
                             >
                                 <div className="flex items-center gap-6">
                                     <div className="flex items-center w-40">
-                                        <div className="h-14 flex items-center justify-center text-lg font-bold text-violet-300">
+                                        <div className="h-14 flex items-center justify-center text-lg font-bold text-white">
                                             {p.name}
                                         </div>
                                     </div>
@@ -62,6 +68,12 @@ export default function SenduCouponPage() {
                                         <div className="bg-[#1c1a35] border border-violet-500/40 rounded-md px-3 py-2 text-sm w-48 text-center select-all">
                                             {p.coupon}
                                         </div>
+                                        <button
+                                            onClick={() => handleCopy(p.coupon, p.id)}
+                                            className="px-3 py-2 rounded-md bg-violet-600 hover:bg-violet-700 transition text-sm font-medium min-w-[70px]"
+                                        >
+                                            {copiedId === p.id ? "Copied!" : "Copy"}
+                                        </button>
                                     </div>
                                 </div>
                                 <a
@@ -83,7 +95,7 @@ export default function SenduCouponPage() {
                     <div className="flex items-center justify-between bg-[#121025]/60 backdrop-blur-md border border-white/10 rounded-2xl p-5 shadow-[0_0_20px_rgba(80,40,200,0.15)] hover:shadow-[0_0_25px_rgba(130,80,255,0.3)] transition">
                         <div className="flex items-center gap-6">
                             <div className="flex items-center w-40">
-                                <div className="h-14 flex items-center justify-center text-lg font-bold text-violet-300">
+                                <div className="h-14 flex items-center justify-center text-lg font-bold text-white">
                                     {partners[2].name}
                                 </div>
                             </div>
@@ -92,6 +104,12 @@ export default function SenduCouponPage() {
                                 <div className="bg-[#1c1a35] border border-violet-500/40 rounded-md px-3 py-2 text-sm w-48 text-center select-all">
                                     {partners[2].coupon}
                                 </div>
+                                <button
+                                    onClick={() => handleCopy(partners[2].coupon, partners[2].id)}
+                                    className="px-3 py-2 rounded-md bg-violet-600 hover:bg-violet-700 transition text-sm font-medium min-w-[70px]"
+                                >
+                                    {copiedId === partners[2].id ? "Copied!" : "Copy"}
+                                </button>
                             </div>
                         </div>
                         <a
