@@ -40,7 +40,6 @@ export default function SenduCouponPage() {
         <div className="min-h-screen bg-gradient-to-br from-[#090917] via-[#0d0c24] to-[#1a133b] text-white font-sans">
             {/* Header */}
             <header className="border-b border-white/10 py-6 px-8 flex items-center gap-4">
-                <img src="/vr.svg" alt="SENDU Logo" className="w-8 h-8 object-contain" />
                 <h1 className="text-3xl font-bold tracking-wide bg-gradient-to-r from-violet-400 via-fuchsia-400 to-pink-400 bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(168,85,247,0.5)]">
                     SENDU Coupon
                 </h1>
