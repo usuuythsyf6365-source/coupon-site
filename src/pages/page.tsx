@@ -17,14 +17,14 @@ export default function SenduCouponPage() {
             id: "bird",
             name: "BirdProxies",
             logo: "/logos/bird.png",
-            coupon: "BIRD-SENDU-2025",
+            coupon: "OCT11",
             url: "https://birdproxies.com",
         },
         {
             id: "flamingo",
             name: "FlamingoProxies",
             logo: "/logos/flamingo.png",
-            coupon: "FLAMINGO-2025",
+            coupon: "PIT25",
             url: "https://flamingoproxies.com",
         },
         {
@@ -32,7 +32,7 @@ export default function SenduCouponPage() {
             name: "OrbitServers",
             logo: "/logos/orbit.png",
             coupon: "ORBIT-SENDU-2025",
-            url: "https://orbitservers.com",
+            url: "https://orbitservers.io/",
         },
     ];
 
