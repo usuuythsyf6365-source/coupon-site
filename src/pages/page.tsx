@@ -17,7 +17,7 @@ export default function SenduCouponPage() {
             id: "bird",
             name: "BirdProxies",
             logo: "/logos/bird.png",
-            coupon: "OCT11",
+            coupon: "SENDUBOT10",
             url: "https://birdproxies.com",
         },
         {
