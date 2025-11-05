@@ -24,7 +24,7 @@ export default function SenduCouponPage() {
             id: "flamingo",
             name: "FlamingoProxies",
             logo: "/logos/flamingo.png",
-            coupon: "PIT25",
+            coupon: "SENDUBOT25",
             url: "https://flamingoproxies.com",
         },
         {
